@@ -1,24 +1,20 @@
 {
-  "name": "postcss-shopify-settings-variables",
-  "version": "0.3.1",
-  "description": "[PostCSS] plugin for setting variable in shopify css file.",
+  "name": "postcss-liquid-variables",
+  "version": "1.0.0",
+  "description": "PostCSS plugin for using Liquid variables in CSS files.",
   "keywords": [
     "postcss",
     "css",
     "postcss-plugin",
-    "shopify",
     "liquid"
   ],
-  "author": "bit3725 <bit3725@gmail.com>",
+  "author": "cltweedie <cltweedie@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bit3725/postcss-shopify-settings-variables.git"
+    "url": "https://github.com/cltweedie/postcss-liquid-variables"
   },
-  "bugs": {
-    "url": "https://github.com/bit3725/postcss-shopify-settings-variables/issues"
-  },
-  "homepage": "https://github.com/bit3725/postcss-shopify-settings-variables",
+  "homepage": "https://github.com/cltweedie/postcss-liquid-variables",
   "dependencies": {
     "postcss": "^6.x"
   },
