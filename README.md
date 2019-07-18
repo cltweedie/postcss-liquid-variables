@@ -1,6 +1,6 @@
 # PostCSS Liquid Variables
 
-[PostCSS] plugin to allow use of Liquid theme variables in CSS files.
+PostCSS plugin to allow use of Liquid theme variables in CSS files.
 
 Forked from [PostCSS Shopify Settings Variables](https://github.com/bit3725/postcss-shopify-settings-variables) and adjusted slightly for use with non-Shopify Liquid templates.
 
@@ -14,7 +14,7 @@ Will be transformed to:
 
 ```css
 .foo {
-  background-color: {{ theme_preferences.background_colour }}; /* Shopify friendly values */
+  background-color: {{ theme_preferences.background_colour }};
 }
 ```
 
@@ -24,4 +24,4 @@ Will be transformed to:
 postcss([ require('postcss-liquid-variables') ])
 ```
 
-See [PostCSS] docs for examples for your environment.
+See PostCSS docs for examples for your environment.
