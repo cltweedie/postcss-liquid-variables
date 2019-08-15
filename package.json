@@ -1,6 +1,6 @@
 {
   "name": "postcss-liquid-variables",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "PostCSS plugin for using Liquid variables in CSS files.",
   "keywords": [
     "postcss",
