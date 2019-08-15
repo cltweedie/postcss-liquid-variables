@@ -1,8 +1,5 @@
 var postcss = require('postcss');
 
-var bgUrlRegex = /url\([\s'"]?(.*?)[\s'"]?\)/g;
-var protocolRegex = /(https?:)?\/\/|data:/g;
-
 module.exports = postcss.plugin('postcss-liquid-variables',
   function (opts) {
     opts = opts || {};
@@ -16,29 +13,10 @@ module.exports = postcss.plugin('postcss-liquid-variables',
         if ( node.type === 'decl' ) {
           if ( node.value.indexOf('$(') >= 0 ) {
             node.value = node.value
-                .replace(/^([^\$]*)(\$\()([^\)]+)(\))(.*)$/,
-                    function(match, $1, $2, $3, $4, $5) {
-                        return $1 + '{{ ' + $3 + ' }}' + $5;
-                    });
-          }
-          if ( bgUrlRegex.test(node.value) &&
-            !protocolRegex.test(node.value) ) {
-            node.value = node.value.replace(bgUrlRegex,
-                function(match, $1) {
-                    var urlAndFilters = $1.split('|');
-                    var newVal = 'url({{ "';
-                    urlAndFilters.forEach(function (current, index) {
-                        if (index === 0) {
-                            newVal += current.replace(/'|"/g, '')
-                                .trim();
-                            newVal += '" | asset_url ';
-                        } else {
-                            newVal += '| ' + current.trim() + ' ';
-                        }
-                    });
-                    newVal += '}})';
-                    return newVal;
-                });
+              .replace(/^([^\$]*)(\$\()([^\)]+)(\))(.*)$/,
+                  function(match, $1, $2, $3, $4, $5) {
+                      return $1 + '{{ ' + $3 + ' }}' + $5;
+                  });
           }
         }
       });
